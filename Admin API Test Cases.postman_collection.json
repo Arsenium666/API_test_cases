@@ -49,7 +49,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
