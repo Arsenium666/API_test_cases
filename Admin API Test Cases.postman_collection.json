@@ -1,0 +1,1267 @@
+{
+	"info": {
+		"_postman_id": "f558c206-d275-46e2-ab98-f45a945ff9b1",
+		"name": "Admin API Test Cases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Add Employee",
+					"item": [
+						{
+							"name": "Email variations",
+							"item": [
+								{
+									"name": "Add Employee Without Email",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Your test name\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"The Email field is required.\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Employee With Invalid Email",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var invalidEmails = pm.environment.get(\"Emails\");\r",
+													"console.log(invalidEmails)\r",
+													"if (!invalidEmails) {\r",
+													"   invalidEmails = [\"rrfee\", \"85828.efe\", \"@.\", \"erferfre@fdgrtgv\", \"werfrfe.34fwef\", \"-*/-@.\"];\r",
+													"}\r",
+													"\r",
+													"var invalidEmail = invalidEmails.shift();\r",
+													"pm.environment.set(\"Email\", invalidEmail);\r",
+													"pm.environment.set(\"Emails\", invalidEmails);"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Email\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"Invalid Email\");\r",
+													"});\r",
+													"\r",
+													"var invalidEmails = pm.environment.get(\"Emails\");\r",
+													"\r",
+													"if (invalidEmails && invalidEmails.length > 0) {\r",
+													"    postman.setNextRequest(\"Add Employee With Invalid Email\");\r",
+													"} else {\r",
+													"    postman.setNextRequest(null);\r",
+													"    pm.environment.unset(\"Emails\");\r",
+													"    pm.environment.unset(\"Email\");\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Password variations",
+							"item": [
+								{
+									"name": "Add Employee Without Password",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"The Password field is required.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Employee Without Confirm Password",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Confirm Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"The password and confirmation password do not match.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pass and Confirm. Pass doesn't match",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"The password and confirmation password do not match.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Fass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Password without lowercase",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"Password must contain lowercase, uppercase, digits and one of this '!@#$%&()' symbols.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"PASS123()\",\r\n  \"ConfirmPassword\": \"PASS123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Password without uppercase",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"Password must contain lowercase, uppercase, digits and one of this '!@#$%&()' symbols.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"pass123()\",\r\n  \"ConfirmPassword\": \"pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Password without digits",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"Password must contain lowercase, uppercase, digits and one of this '!@#$%&()' symbols.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Passpass()\",\r\n  \"ConfirmPassword\": \"Passpass()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Password without S. char.-s Copy",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"Password must contain lowercase, uppercase, digits and one of this '!@#$%&()' symbols.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Passpass123\",\r\n  \"ConfirmPassword\": \"Passpass123\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Short Password",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Ivalid Password\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(null);\r",
+													"    pm.expect(jsonData.Errors).to.contain(\"The Password must be at least 6 characters long.\");\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pa12(\",\r\n  \"ConfirmPassword\": \"Pa12(\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Other variations",
+							"item": [
+								{
+									"name": "Assigned to all branches - true",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": true,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Assigned to all branches - false",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Autocall - false",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": false,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Autocall - true",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Valid integers",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );\r",
+													"var nValues = pm.environment.get(\"nValues\")\r",
+													"\r",
+													"if (!nValues) {\r",
+													"    nValues = [\"-5\",\"0\",\"1\",\"50\",\"100\"]\r",
+													"};\r",
+													"\r",
+													"var nValue = nValues.shift()\r",
+													"pm.environment.set(\"nValues\", nValues);\r",
+													"pm.environment.set(\"nValue\", nValue);"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});\r",
+													"\r",
+													"var nValues = pm.environment.get(\"nValues\");\r",
+													"\r",
+													"if (nValues && nValues.length > 0) {\r",
+													"    postman.setNextRequest(\"Valid integers\")\r",
+													"} else {\r",
+													"    postman.setNextRequest(null)\r",
+													"    pm.environment.unset(\"nValues\");\r",
+													"    pm.environment.unset(\"nValue\");\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": {{nValue}}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Roles variations",
+							"item": [
+								{
+									"name": "Check Each Role",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );\r",
+													"var roles = pm.environment.get(\"roles\")\r",
+													"\r",
+													"if (!roles) {\r",
+													"    roles = [\"BI_Monitoring\",\"BI_Reporting\",\"Employee\",\"Manager\", \"Report\"]\r",
+													"};\r",
+													"\r",
+													"var role = roles.shift()\r",
+													"pm.environment.set(\"roles\", roles);\r",
+													"pm.environment.set(\"role\", role);"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});\r",
+													"\r",
+													"var roles = pm.environment.get(\"roles\");\r",
+													"\r",
+													"if (roles && roles.length > 0) {\r",
+													"    postman.setNextRequest(\"Check Each Role\")\r",
+													"} else {\r",
+													"    postman.setNextRequest(null)\r",
+													"    pm.environment.unset(\"roles\");\r",
+													"    pm.environment.unset(\"role\");\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n      \"{{role}}\"\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add employee with multiple roles",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );\r",
+													"var roles = pm.environment.get(\"roles\")\r",
+													"\r",
+													"if (!roles) {\r",
+													"    roles = ['\"BI_Monitoring\"','\"BI_Reporting\"','\"Employee\"','\"Manager\"', '\"Report\"']\r",
+													"}\r",
+													"\r",
+													"pm.environment.set(\"roles\", roles);\r",
+													"\r",
+													"\r",
+													"var role = roles.shift();\r",
+													"\r",
+													"pm.environment.set(\"role\", role);"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});\r",
+													"\r",
+													"var roles = pm.environment.get(\"roles\")\r",
+													"\r",
+													"if (roles && roles.length >1) {\r",
+													"    postman.setNextRequest(\"Add employee with multiple roles\")\r",
+													"} else {\r",
+													"    postman.setNextRequest(null)\r",
+													"    pm.environment.unset(\"roles\")\r",
+													"    pm.environment.unset(\"role\")\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n      {{roles}}\r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add employee without roles",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n     \r\n\r\n  ],\r\n  \"FirstName\": \"aadfg\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "First Name variations",
+							"item": [
+								{
+									"name": "First name - strings",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"Email\", parseInt(Math.random()*10000)+\"@g4rtg.tt\" );\r",
+													"var fNames = pm.environment.get(\"fNames\")\r",
+													"\r",
+													"if (!fNames) {\r",
+													"    fNames = [\"eger\",\"UGVUYBU\",\"sdf62151er\",\"aaaaaaaaaaaaaaaaaaaaaaaaa\",\"--***/44\"]\r",
+													"};\r",
+													"\r",
+													"var nValue = nValues.shift()\r",
+													"pm.environment.set(\"fNames\", fNames);\r",
+													"pm.environment.set(\"fName\", fName);"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Success\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Result).to.eql(\"Success\");\r",
+													"    pm.expect(jsonData.Errors).to.eql(null);\r",
+													"});\r",
+													"\r",
+													"var fNames = pm.environment.get(\"fNames\");\r",
+													"\r",
+													"if (fNames && fNames.length > 0) {\r",
+													"    postman.setNextRequest(\"First name - strings\")\r",
+													"} else {\r",
+													"    postman.setNextRequest(null)\r",
+													"    pm.environment.unset(\"fNames\");\r",
+													"    pm.environment.unset(\"fName\");\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"Password\": \"Pass123()\",\r\n  \"ConfirmPassword\": \"Pass123()\",\r\n  \"IsAssignedToAllBranches\": false,\r\n  \"Roles\": [\r\n        \"BI_Monitoring\",\r\n        \"BI_Reporting\",\r\n        \"Employee\",\r\n        \"Manager\"\r\n\r\n  ],\r\n  \"FirstName\": \"{{fName}}\",\r\n  \"LastName\": \"Kishmiryan\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"Phone\": \"+8555555558\",\r\n  \"AutoCall\": true,\r\n  \"NotificationValue\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{adminUrl}}/Employee/Add",
+											"host": [
+												"{{adminUrl}}"
+											],
+											"path": [
+												"Employee",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get All Employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{adminUrl}}/Employee/GetAll",
+							"host": [
+								"{{adminUrl}}"
+							],
+							"path": [
+								"Employee",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "NjRFMzJDQjktQTM1NS00ODY4LUIyRjQtNkUyREMxRTQyMTIyOjFFMDVCM0ZGLTNGMzMtNDdCMS05RkIzLUM4QjNDMTRENjEyNg==",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
