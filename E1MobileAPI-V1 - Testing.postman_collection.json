@@ -1,0 +1,4068 @@
+{
+	"info": {
+		"_postman_id": "4c540e04-1e35-4a7e-8784-bc752167076e",
+		"name": "E1MobileAPI-V1 - Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Appointment",
+					"item": [
+						{
+							"name": "/api/Appointment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branchId\": 528,\n    \"date\": \"2022-04-08T14:55:21\",\n    \"note\": \"ut officia aliquip\",\n    \"hasReception\": false,\n    \"userName\": \"nostrud laboris dolore Excepteur\",\n    \"appointmentStep\": {\n        \"companyId\": 60195,\n        \"accountId\": 50254,\n        \"serviceId\": 70183,\n        \"resourceId\": 10016,\n        \"startTime\": \"14:55\",\n        \"duration\": 20,\n        \"note\": \"laboris magna ex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Appointment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Appointment"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"appointmentStep\": {\n    \"companyId\": 2316880,\n    \"accountId\": 67271707,\n    \"serviceId\": 10967843,\n    \"resourceId\": 74232608,\n    \"startTime\": {},\n    \"duration\": -71904029,\n    \"note\": \"laboris magna ex\",\n    \"appointmentId\": 78092955\n  },\n  \"branchId\": -73270332,\n  \"date\": \"2019-01-29T12:55:21.758Z\",\n  \"note\": \"ut officia aliquip\",\n  \"hasReception\": false,\n  \"userName\": \"nostrud laboris dolore Excepteur\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 56318192,\n  \"date\": \"1962-02-04T03:51:31.697Z\",\n  \"accountId\": 84315385,\n  \"serviceId\": 33550632,\n  \"startTime\": {\n    \"ticks\": -52830703,\n    \"days\": 83596266,\n    \"hours\": 81849658,\n    \"milliseconds\": -68207284,\n    \"minutes\": -81241312,\n    \"seconds\": 40672147,\n    \"totalDays\": 7968598.435113534,\n    \"totalHours\": 80887498.60435054,\n    \"totalMilliseconds\": -78905746.59782103,\n    \"totalMinutes\": -52884633.24621939,\n    \"totalSeconds\": -68813560.15544987\n  },\n  \"duration\": 79862926,\n  \"note\": \"pariatur enim laboris\",\n  \"appointmentId\": -40309747,\n  \"appointmentNumber\": \"exercitation p\",\n  \"appointmentNote\": \"eiusmod est\",\n  \"hasReception\": false,\n  \"pin\": \"velit ullamco\",\n  \"userName\": \"quis ex aute ut\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"appointmentStep\": {\n    \"companyId\": 2316880,\n    \"accountId\": 67271707,\n    \"serviceId\": 10967843,\n    \"resourceId\": 74232608,\n    \"startTime\": {},\n    \"duration\": -71904029,\n    \"note\": \"laboris magna ex\",\n    \"appointmentId\": 78092955\n  },\n  \"branchId\": -73270332,\n  \"date\": \"2019-01-29T12:55:21.758Z\",\n  \"note\": \"ut officia aliquip\",\n  \"hasReception\": false,\n  \"userName\": \"nostrud laboris dolore Excepteur\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"appointmentStep\": {\n    \"companyId\": 2316880,\n    \"accountId\": 67271707,\n    \"serviceId\": 10967843,\n    \"resourceId\": 74232608,\n    \"startTime\": {},\n    \"duration\": -71904029,\n    \"note\": \"laboris magna ex\",\n    \"appointmentId\": 78092955\n  },\n  \"branchId\": -73270332,\n  \"date\": \"2019-01-29T12:55:21.758Z\",\n  \"note\": \"ut officia aliquip\",\n  \"hasReception\": false,\n  \"userName\": \"nostrud laboris dolore Excepteur\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Appointment",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Appointment?id=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Appointment"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment?id=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment?id=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment?id=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Appointment/GetAppointmentsByDeviceKey",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"pin\": \"string\",\r\n    \"appointmentSteps\": [\r\n      {\r\n        \"id\": 0,\r\n        \"date\": \"2022-04-08T05:07:40.548Z\",\r\n        \"serviceProviderName\": \"string\",\r\n        \"specialization\": \"string\",\r\n        \"serviceName\": \"string\"\r\n      }\r\n    ],\r\n    \"branchInfo\": {\r\n      \"name\": \"string\",\r\n      \"address\": \"string\",\r\n      \"latitude\": 0,\r\n      \"longitude\": 0,\r\n      \"cityId\": 0,\r\n      \"countryId\": 0,\r\n      \"company\": {\r\n        \"name\": \"string\",\r\n        \"checkInKey\": \"string\",\r\n        \"imagePath\": \"string\",\r\n        \"categoryNames\": [\r\n          \"string\"\r\n        ]\r\n      }\r\n    }\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Appointment/GetAppointmentsByDeviceKey",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Appointment",
+										"GetAppointmentsByDeviceKey"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment/GetAppointmentsByDeviceKey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment",
+												"GetAppointmentsByDeviceKey"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": 91568965,\n    \"pin\": \"occaecat dolor\",\n    \"appointmentSteps\": [\n      {\n        \"id\": 62376737,\n        \"date\": \"1979-06-25T23:18:49.270Z\",\n        \"serviceProviderName\": \"irure laborum Lorem\",\n        \"specialization\": \"pariatur minim ea occaecat nisi\",\n        \"serviceName\": \"nostrud amet aliqu\"\n      },\n      {\n        \"id\": -84274372,\n        \"date\": \"1965-04-02T00:57:07.450Z\",\n        \"serviceProviderName\": \"veniam Lorem\",\n        \"specialization\": \"Excepteur velit Ut aliquip\",\n        \"serviceName\": \"et Ut commodo\"\n      }\n    ],\n    \"branchInfo\": {\n      \"name\": \"reprehenderit in\",\n      \"address\": \"consequat Lorem sed\",\n      \"latitude\": 54108264.08439502,\n      \"longitude\": -98295253.04818079,\n      \"cityId\": -42704907,\n      \"countryId\": -84954136,\n      \"company\": {\n        \"name\": \"aliquip consequat\",\n        \"checkInKey\": \"voluptate consequat nostrud commodo\",\n        \"imagePath\": \"ea aliquip\",\n        \"categoryNames\": [\n          \"quis\",\n          \"nulla in magna velit anim\"\n        ]\n      }\n    }\n  },\n  {\n    \"id\": -10528566,\n    \"pin\": \"cupidatat ad Excepteur mollit reprehenderit\",\n    \"appointmentSteps\": [\n      {\n        \"id\": 80103685,\n        \"date\": \"2014-02-09T08:27:00.971Z\",\n        \"serviceProviderName\": \"esse eiusmod\",\n        \"specialization\": \"est\",\n        \"serviceName\": \"minim id sed\"\n      },\n      {\n        \"id\": 88175249,\n        \"date\": \"1994-04-14T03:02:36.981Z\",\n        \"serviceProviderName\": \"o\",\n        \"specialization\": \"dolor anim et dolor\",\n        \"serviceName\": \"non et elit ex\"\n      }\n    ],\n    \"branchInfo\": {\n      \"name\": \"irure eiusmod\",\n      \"address\": \"cupidatat\",\n      \"latitude\": 24533020.80386655,\n      \"longitude\": 21994158.49722807,\n      \"cityId\": -70931040,\n      \"countryId\": -20268147,\n      \"company\": {\n        \"name\": \"minim dolor Duis\",\n        \"checkInKey\": \"exercitation eu\",\n        \"imagePath\": \"id incididunt do\",\n        \"categoryNames\": [\n          \"culpa Ut ex commodo\",\n          \"esse sunt\"\n        ]\n      }\n    }\n  }\n]"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment/GetAppointmentsByDeviceKey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment",
+												"GetAppointmentsByDeviceKey"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Appointment/GetAppointmentsByDeviceKey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Appointment",
+												"GetAppointmentsByDeviceKey"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "/api/Authentication/GenerateToken",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Key\":\"412test00arsen28\",\n    \"AppKey\":\"AFA9AAD1728B4B579F35FE4F1472490C\",\n    \"Language\":\"en-us\",\n    \"Version\":350,\n    \"DeviceType\":1,\n    \"ApplicationId\":4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Authentication/GenerateToken",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Authentication",
+										"GenerateToken"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"appKey\": \"Lorem aute ipsum\",\n  \"deviceType\": -48257823,\n  \"key\": \"reprehenderit voluptate\",\n  \"language\": \"dolor pariatur\",\n  \"version\": \"eiusmod id\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Authentication/GenerateToken",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Authentication",
+												"GenerateToken"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"token\": \"Duis in est laborum\",\n  \"refreshToken\": \"amet do\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"appKey\": \"Lorem aute ipsum\",\n  \"deviceType\": -48257823,\n  \"key\": \"reprehenderit voluptate\",\n  \"language\": \"dolor pariatur\",\n  \"version\": \"eiusmod id\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Authentication/GenerateToken",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Authentication",
+												"GenerateToken"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"appKey\": \"Lorem aute ipsum\",\n  \"deviceType\": -48257823,\n  \"key\": \"reprehenderit voluptate\",\n  \"language\": \"dolor pariatur\",\n  \"version\": \"eiusmod id\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Authentication/GenerateToken",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Authentication",
+												"GenerateToken"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Authentication/RefreshToken",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refreshToken\": \"est officia et\",\n  \"token\": \"aliqua elit exercitation\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Authentication/RefreshToken",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Authentication",
+										"RefreshToken"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refreshToken\": \"est officia et\",\n  \"token\": \"aliqua elit exercitation\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Authentication/RefreshToken",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Authentication",
+												"RefreshToken"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"token\": \"Duis in est laborum\",\n  \"refreshToken\": \"amet do\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refreshToken\": \"est officia et\",\n  \"token\": \"aliqua elit exercitation\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Authentication/RefreshToken",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Authentication",
+												"RefreshToken"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refreshToken\": \"est officia et\",\n  \"token\": \"aliqua elit exercitation\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Authentication/RefreshToken",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Authentication",
+												"RefreshToken"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Branch Working Hours",
+					"item": [
+						{
+							"name": "/api/BranchWorkingHours",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/BranchWorkingHours?branchId=40",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"BranchWorkingHours"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "40"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/BranchWorkingHours?branchId=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"BranchWorkingHours"
+											],
+											"query": [
+												{
+													"key": "branchId",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"branchId\": -63513147,\n  \"isWorkingCurrentDay\": true,\n  \"nextWorkingDate\": \"1988-02-01T09:17:18.697Z\",\n  \"dayOn\": 49588569,\n  \"weekdayWorkingHours\": [\n    {\n      \"weekDay\": -56484105,\n      \"isWorking\": false,\n      \"dayStart\": {\n        \"ticks\": 60350814,\n        \"days\": 75260821,\n        \"hours\": 5845207,\n        \"milliseconds\": 60630766,\n        \"minutes\": 9362018,\n        \"seconds\": 23647122,\n        \"totalDays\": 53506927.6904459,\n        \"totalHours\": -81500157.05107357,\n        \"totalMilliseconds\": 80424097.28233647,\n        \"totalMinutes\": 41063255.999706894,\n        \"totalSeconds\": 29937946.9950618\n      },\n      \"dayEnd\": {\n        \"ticks\": 14365016,\n        \"days\": -73583795,\n        \"hours\": 2330583,\n        \"milliseconds\": 22733265,\n        \"minutes\": 53329470,\n        \"seconds\": -58764505,\n        \"totalDays\": 40457285.21588418,\n        \"totalHours\": 43283666.25189358,\n        \"totalMilliseconds\": -76742273.54777692,\n        \"totalMinutes\": 4808026.313311636,\n        \"totalSeconds\": -53931841.21738455\n      },\n      \"breakStart\": {\n        \"ticks\": -41216253,\n        \"days\": 92814052,\n        \"hours\": 85502924,\n        \"milliseconds\": -62541321,\n        \"minutes\": -50712302,\n        \"seconds\": -70032334,\n        \"totalDays\": 41941698.83984929,\n        \"totalHours\": -57393872.337159246,\n        \"totalMilliseconds\": 49924514.17814663,\n        \"totalMinutes\": 11578564.115697354,\n        \"totalSeconds\": -89054505.30832137\n      },\n      \"breakEnd\": {\n        \"ticks\": 69558636,\n        \"days\": -93027904,\n        \"hours\": -71864142,\n        \"milliseconds\": 23928330,\n        \"minutes\": 3681488,\n        \"seconds\": -1402615,\n        \"totalDays\": -64136365.03055051,\n        \"totalHours\": 25022909.553594902,\n        \"totalMilliseconds\": 26426203.019169584,\n        \"totalMinutes\": -88304298.02245878,\n        \"totalSeconds\": 88154936.3327896\n      }\n    },\n    {\n      \"weekDay\": 17466944,\n      \"isWorking\": true,\n      \"dayStart\": {\n        \"ticks\": 36500817,\n        \"days\": -98468189,\n        \"hours\": 36172337,\n        \"milliseconds\": -69353476,\n        \"minutes\": 45968655,\n        \"seconds\": 50504609,\n        \"totalDays\": -99758631.81648919,\n        \"totalHours\": 69451695.0689098,\n        \"totalMilliseconds\": 65133832.26274207,\n        \"totalMinutes\": -6415859.464385137,\n        \"totalSeconds\": 14221756.661083743\n      },\n      \"dayEnd\": {\n        \"ticks\": -4681650,\n        \"days\": 76168787,\n        \"hours\": -43171097,\n        \"milliseconds\": -29433976,\n        \"minutes\": 91594941,\n        \"seconds\": -34087022,\n        \"totalDays\": 23209391.898453638,\n        \"totalHours\": -74993348.91519092,\n        \"totalMilliseconds\": 75708758.64342415,\n        \"totalMinutes\": 75685824.6195673,\n        \"totalSeconds\": 21812175.1633344\n      },\n      \"breakStart\": {\n        \"ticks\": 96695874,\n        \"days\": -13012248,\n        \"hours\": 90405973,\n        \"milliseconds\": -31606660,\n        \"minutes\": 94187032,\n        \"seconds\": 31249868,\n        \"totalDays\": -34718783.91741585,\n        \"totalHours\": -35731934.51028662,\n        \"totalMilliseconds\": 85004998.88172898,\n        \"totalMinutes\": -58254119.78927275,\n        \"totalSeconds\": 1670347.876617089\n      },\n      \"breakEnd\": {\n        \"ticks\": -67776295,\n        \"days\": 37155523,\n        \"hours\": 48387467,\n        \"milliseconds\": -30742013,\n        \"minutes\": -32187608,\n        \"seconds\": 9496177,\n        \"totalDays\": -35155798.14217977,\n        \"totalHours\": 53001016.67158103,\n        \"totalMilliseconds\": -61272606.24330391,\n        \"totalMinutes\": -73803241.80311915,\n        \"totalSeconds\": -90583762.27064535\n      }\n    }\n  ]\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/BranchWorkingHours?branchId=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"BranchWorkingHours"
+											],
+											"query": [
+												{
+													"key": "branchId",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/BranchWorkingHours?branchId=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"BranchWorkingHours"
+											],
+											"query": [
+												{
+													"key": "branchId",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/BranchWorkingHours/Calendar",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/BranchWorkingHours/Calendar?branchId=40",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"BranchWorkingHours",
+										"Calendar"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "40",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/BranchWorkingHours/Calendar?branchId=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"BranchWorkingHours",
+												"Calendar"
+											],
+											"query": [
+												{
+													"key": "branchId",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"workingDays\": [\n    {\n      \"isWorking\": true,\n      \"weekDay\": -51604136\n    },\n    {\n      \"isWorking\": true,\n      \"weekDay\": 94809943\n    }\n  ],\n  \"dayOffDayOns\": [\n    {\n      \"date\": \"1968-01-13T20:46:42.768Z\",\n      \"isWorking\": false\n    },\n    {\n      \"date\": \"1964-07-26T10:26:26.195Z\",\n      \"isWorking\": false\n    }\n  ],\n  \"workingInterval\": -18362924\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/BranchWorkingHours/Calendar?branchId=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"BranchWorkingHours",
+												"Calendar"
+											],
+											"query": [
+												{
+													"key": "branchId",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/BranchWorkingHours/Calendar?branchId=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"BranchWorkingHours",
+												"Calendar"
+											],
+											"query": [
+												{
+													"key": "branchId",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Country",
+					"item": [
+						{
+							"name": "/api/Country",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Country?Culture=hy",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Country"
+									],
+									"query": [
+										{
+											"key": "Culture",
+											"value": "hy"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Country?Culture=ut commodo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Country"
+											],
+											"query": [
+												{
+													"key": "Culture",
+													"value": "ut commodo"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": -37947743,\n    \"name\": \"velit adipisicing ullamco\",\n    \"imageURI\": \"ea irure ut dolor\",\n    \"isIndustryEnabled\": false,\n    \"code\": \"laborum officia mollit cupidatat\"\n  },\n  {\n    \"id\": 70251816,\n    \"name\": \"nostrud adipisicing enim\",\n    \"imageURI\": \"reprehenderit veniam in\",\n    \"isIndustryEnabled\": false,\n    \"code\": \"laboris id\"\n  }\n]"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Country?Culture=ut commodo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Country"
+											],
+											"query": [
+												{
+													"key": "Culture",
+													"value": "ut commodo"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Country?Culture=ut commodo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Country"
+											],
+											"query": [
+												{
+													"key": "Culture",
+													"value": "ut commodo"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Country/Locate",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Country/Locate?longitute=ut commodo&latitude=ut commodo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Country",
+										"Locate"
+									],
+									"query": [
+										{
+											"key": "longitute",
+											"value": "ut commodo"
+										},
+										{
+											"key": "latitude",
+											"value": "ut commodo"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Country/Locate?longitute=ut commodo&latitude=ut commodo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Country",
+												"Locate"
+											],
+											"query": [
+												{
+													"key": "longitute",
+													"value": "ut commodo"
+												},
+												{
+													"key": "latitude",
+													"value": "ut commodo"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 87754924,\n  \"name\": \"sit\",\n  \"imageURI\": \"laboris dolore\",\n  \"isIndustryEnabled\": false,\n  \"code\": \"Ut adipisicing id\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Country/Locate?longitute=ut commodo&latitude=ut commodo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Country",
+												"Locate"
+											],
+											"query": [
+												{
+													"key": "longitute",
+													"value": "ut commodo"
+												},
+												{
+													"key": "latitude",
+													"value": "ut commodo"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Country/Locate?longitute=ut commodo&latitude=ut commodo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Country",
+												"Locate"
+											],
+											"query": [
+												{
+													"key": "longitute",
+													"value": "ut commodo"
+												},
+												{
+													"key": "latitude",
+													"value": "ut commodo"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Country/Locate?longitute=ut commodo&latitude=ut commodo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Country",
+												"Locate"
+											],
+											"query": [
+												{
+													"key": "longitute",
+													"value": "ut commodo"
+												},
+												{
+													"key": "latitude",
+													"value": "ut commodo"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "/api/Ticket/GetTicketsById",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Ticket/GetTicketsById?TicketsIds=562267",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Ticket",
+										"GetTicketsById"
+									],
+									"query": [
+										{
+											"key": "TicketsIds",
+											"value": "562267"
+										},
+										{
+											"key": "TicketsIds",
+											"value": "33814783",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/GetTicketsById?TicketsIds=-31343162&TicketsIds=1622233",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"GetTicketsById"
+											],
+											"query": [
+												{
+													"key": "TicketsIds",
+													"value": "-31343162"
+												},
+												{
+													"key": "TicketsIds",
+													"value": "1622233"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": -27606957,\n    \"ticketNumber\": \"exercitation\",\n    \"pin\": \"culpa qui cupidata\",\n    \"createdDate\": \"2021-03-12T23:16:06.188Z\",\n    \"lastChangeDate\": \"1966-11-09T17:22:30.397Z\",\n    \"targetDay\": \"1982-08-03T20:51:14.400Z\",\n    \"queueTime\": \"2001-10-29T22:42:40.382Z\",\n    \"delay\": 36538998,\n    \"checkIn\": false,\n    \"ticketStatusId\": -21111252,\n    \"buttonText\": \"fugiat exercitation\",\n    \"company\": {\n      \"id\": 26836932,\n      \"name\": \"ex ut sint\",\n      \"address\": \"nulla Excepteur\",\n      \"email\": \"ven\",\n      \"webSite\": \"pariatur\",\n      \"isTemporaryDisabled\": true,\n      \"phones\": [\n        \"aliqua sunt in nostrud laboris\",\n        \"ut reprehenderit\"\n      ],\n      \"checkInKey\": \"laboris sint sed\",\n      \"categoryNames\": [\n        \"dolore\",\n        \"sed irure\"\n      ],\n      \"imagePath\": \"dolor\"\n    },\n    \"branch\": {\n      \"id\": -42894205,\n      \"name\": \"cupidatat ut exercitation\",\n      \"address\": \"sit nostrud\",\n      \"email\": \"in ut eiusmod Lorem dolor\",\n      \"latitude\": -811276.5487830639,\n      \"longitude\": -16027406.434756845,\n      \"countryId\": 46259576,\n      \"cityId\": -21278361\n    }\n  },\n  {\n    \"id\": 1898057,\n    \"ticketNumber\": \"aliquip fugiat Excepteur reprehenderit\",\n    \"pin\": \"tempor ex proident sunt occaecat\",\n    \"createdDate\": \"1957-08-19T17:24:46.898Z\",\n    \"lastChangeDate\": \"2020-11-02T16:59:19.181Z\",\n    \"targetDay\": \"1977-05-13T05:52:48.687Z\",\n    \"queueTime\": \"2019-09-06T18:47:03.957Z\",\n    \"delay\": -65925579,\n    \"checkIn\": false,\n    \"ticketStatusId\": 29074247,\n    \"buttonText\": \"culpa voluptate\",\n    \"company\": {\n      \"id\": 27565536,\n      \"name\": \"laborum exercitation sunt adipisicing cupidatat\",\n      \"address\": \"mollit esse\",\n      \"email\": \"aliquip nisi\",\n      \"webSite\": \"magna aliquip veniam commodo adipisicing\",\n      \"isTemporaryDisabled\": true,\n      \"phones\": [\n        \"incididunt\",\n        \"proident dolore\"\n      ],\n      \"checkInKey\": \"ea eiusmod pariatur laboris\",\n      \"categoryNames\": [\n        \"in sed\",\n        \"dolore\"\n      ],\n      \"imagePath\": \"consequat id Duis\"\n    },\n    \"branch\": {\n      \"id\": -22934679,\n      \"name\": \"dolor voluptate\",\n      \"address\": \"in\",\n      \"email\": \"labore adipisicing\",\n      \"latitude\": -15288174.085961044,\n      \"longitude\": 17517120.267832726,\n      \"countryId\": 76657322,\n      \"cityId\": -58836226\n    }\n  }\n]"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/GetTicketsById?TicketsIds=-31343162&TicketsIds=1622233",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"GetTicketsById"
+											],
+											"query": [
+												{
+													"key": "TicketsIds",
+													"value": "-31343162"
+												},
+												{
+													"key": "TicketsIds",
+													"value": "1622233"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/GetTicketsById?TicketsIds=-31343162&TicketsIds=1622233",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"GetTicketsById"
+											],
+											"query": [
+												{
+													"key": "TicketsIds",
+													"value": "-31343162"
+												},
+												{
+													"key": "TicketsIds",
+													"value": "1622233"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Ticket/GetTicketByDeviceKey",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Ticket/GetTicketByDeviceKey",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Ticket",
+										"GetTicketByDeviceKey"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/GetTicketByDeviceKey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"GetTicketByDeviceKey"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": -96087241,\n    \"ticketNumber\": \"veniam Ut eiusmod sint\",\n    \"pin\": \"Excepteur nostrud eiusmod\",\n    \"createdDate\": \"1966-02-01T14:31:04.534Z\",\n    \"lastChangeDate\": \"1975-02-06T16:36:10.630Z\",\n    \"targetDay\": \"1956-04-04T01:01:35.932Z\",\n    \"queueTime\": \"1982-03-31T22:30:06.081Z\",\n    \"delay\": -59432655,\n    \"checkIn\": true,\n    \"ticketStatusId\": -88704162,\n    \"buttonText\": \"exercitation amet occaecat\",\n    \"company\": {\n      \"id\": 28701343,\n      \"name\": \"in quis\",\n      \"address\": \"est culpa ipsum elit\",\n      \"email\": \"occaecat magna et sed\",\n      \"webSite\": \"in id consequat\",\n      \"isTemporaryDisabled\": false,\n      \"phones\": [\n        \"amet id quis\",\n        \"fugiat\"\n      ],\n      \"checkInKey\": \"officia sed nisi culpa et\",\n      \"categoryNames\": [\n        \"ullamco\",\n        \"est tempor esse et proident\"\n      ],\n      \"imagePath\": \"deserunt cillum consequat\"\n    },\n    \"branch\": {\n      \"id\": -38955544,\n      \"name\": \"Excep\",\n      \"address\": \"nisi sit\",\n      \"email\": \"ea culpa\",\n      \"latitude\": 65048813.364965945,\n      \"longitude\": -37888722.4437479,\n      \"countryId\": -79060379,\n      \"cityId\": 15197013\n    }\n  },\n  {\n    \"id\": 12618693,\n    \"ticketNumber\": \"dolore\",\n    \"pin\": \"tempor quis in\",\n    \"createdDate\": \"1955-12-24T07:32:04.798Z\",\n    \"lastChangeDate\": \"1999-09-12T12:59:57.988Z\",\n    \"targetDay\": \"1989-06-27T20:27:50.511Z\",\n    \"queueTime\": \"1997-10-18T08:16:28.770Z\",\n    \"delay\": 13741410,\n    \"checkIn\": true,\n    \"ticketStatusId\": 24827416,\n    \"buttonText\": \"ex deserunt adipisicing\",\n    \"company\": {\n      \"id\": -37968285,\n      \"name\": \"dolor enim laboris\",\n      \"address\": \"nulla cupidatat qui laboris\",\n      \"email\": \"cillum e\",\n      \"webSite\": \"eu non incididunt ut\",\n      \"isTemporaryDisabled\": false,\n      \"phones\": [\n        \"id commodo aute eiusmod ut\",\n        \"aute voluptate\"\n      ],\n      \"checkInKey\": \"fugia\",\n      \"categoryNames\": [\n        \"Ut consectetur\",\n        \"quis officia e\"\n      ],\n      \"imagePath\": \"sint consequat incididunt\"\n    },\n    \"branch\": {\n      \"id\": -47619332,\n      \"name\": \"cupidatat in\",\n      \"address\": \"eu ad ullamco Lorem\",\n      \"email\": \"mollit ut ipsum Duis\",\n      \"latitude\": -25819050.01065898,\n      \"longitude\": -84357342.74308819,\n      \"countryId\": 21461269,\n      \"cityId\": 81551862\n    }\n  }\n]"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/GetTicketByDeviceKey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"GetTicketByDeviceKey"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/GetTicketByDeviceKey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"GetTicketByDeviceKey"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Ticket/Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Ticket/Delete?id=562253",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Ticket",
+										"Delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "562253"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Delete?id=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Delete"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Delete?id=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Delete"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Delete?id=-41513070",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Delete"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "-41513070"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Ticket/Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchId\": 6,\n  \"buttonColId\": 32348,\n  \"ignoreEstimation\": false,\n  \"isForced\": true,\n  \"targetDate\": \"2022-04-01T17:15:58\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Ticket/Create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Ticket",
+										"Create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"branchId\": 48295738,\n  \"buttonColId\": 78664381,\n  \"ignoreEstimation\": true,\n  \"isForced\": false,\n  \"targetDate\": \"1953-07-27T07:17:08.986Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"ticketId\": 25873009,\n  \"createDate\": \"2011-05-22T08:30:39.302Z\",\n  \"number\": \"est ad mollit\",\n  \"pin\": \"labore cillum\",\n  \"servingTime\": 13132865,\n  \"estimations\": [\n    {\n      \"start\": \"2012-04-24T14:18:50.068Z\",\n      \"end\": \"1986-05-22T17:49:28.423Z\"\n    },\n    {\n      \"start\": \"1959-12-02T13:48:35.759Z\",\n      \"end\": \"2001-06-11T14:18:49.852Z\"\n    }\n  ],\n  \"estimationResultStatus\": -56146743,\n  \"waitingTickets\": -66349947,\n  \"avgWaitingTickets\": 80923430,\n  \"isServiceBlocked\": false\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"branchId\": 48295738,\n  \"buttonColId\": 78664381,\n  \"ignoreEstimation\": true,\n  \"isForced\": false,\n  \"targetDate\": \"1953-07-27T07:17:08.986Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Create"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"branchId\": 48295738,\n  \"buttonColId\": 78664381,\n  \"ignoreEstimation\": true,\n  \"isForced\": false,\n  \"targetDate\": \"1953-07-27T07:17:08.986Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Create",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Create"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Ticket/CheckIn",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchId\": 40,\n  \"ticketId\": 562252\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Ticket/CheckIn",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Ticket",
+										"CheckIn"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"branchId\": 37902850,\n  \"ticketId\": -37921984\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/CheckIn",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"CheckIn"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "\"ut commodo\""
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"branchId\": 37902850,\n  \"ticketId\": -37921984\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/CheckIn",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"CheckIn"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"branchId\": 37902850,\n  \"ticketId\": -37921984\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/CheckIn",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"CheckIn"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Ticket/Delay",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ticketId\": 76802975,\n  \"delaySeconds\": -26730708\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Ticket/Delay",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Ticket",
+										"Delay"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ticketId\": 76802975,\n  \"delaySeconds\": -26730708\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Delay",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Delay"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "null"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ticketId\": 76802975,\n  \"delaySeconds\": -26730708\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Delay",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Delay"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ticketId\": 76802975,\n  \"delaySeconds\": -26730708\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Ticket/Delay",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Ticket",
+												"Delay"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/api/AppointmentStep",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"companyId\": 99230703,\n  \"accountId\": 74644748,\n  \"serviceId\": 98893970,\n  \"resourceId\": 34965559,\n  \"startTime\": {},\n  \"duration\": -89994521,\n  \"note\": \"tempor est sit voluptate\",\n  \"appointmentId\": -37409072\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/AppointmentStep",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"AppointmentStep"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"companyId\": 99230703,\n  \"accountId\": 74644748,\n  \"serviceId\": 98893970,\n  \"resourceId\": 34965559,\n  \"startTime\": {},\n  \"duration\": -89994521,\n  \"note\": \"tempor est sit voluptate\",\n  \"appointmentId\": -37409072\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/AppointmentStep",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"AppointmentStep"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -61421309,\n  \"date\": \"1956-12-13T12:19:30.665Z\",\n  \"accountId\": 11047636,\n  \"serviceId\": -88140398,\n  \"resourceId\": 55902313,\n  \"startTime\": \"ad aliquip ullamco\",\n  \"endTime\": \"nostrud minim\",\n  \"duration\": -12610483,\n  \"note\": \"laboris te\",\n  \"appointmentId\": -89870206,\n  \"appointmentNumber\": \"exercitation sint ipsum\",\n  \"appointmentNote\": \"consequat ipsum quis ut\",\n  \"hasReception\": true,\n  \"pin\": \"nostrud et ipsum veniam aliquip\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"companyId\": 99230703,\n  \"accountId\": 74644748,\n  \"serviceId\": 98893970,\n  \"resourceId\": 34965559,\n  \"startTime\": {},\n  \"duration\": -89994521,\n  \"note\": \"tempor est sit voluptate\",\n  \"appointmentId\": -37409072\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/AppointmentStep",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"AppointmentStep"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"companyId\": 99230703,\n  \"accountId\": 74644748,\n  \"serviceId\": 98893970,\n  \"resourceId\": 34965559,\n  \"startTime\": {},\n  \"duration\": -89994521,\n  \"note\": \"tempor est sit voluptate\",\n  \"appointmentId\": -37409072\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/AppointmentStep",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"AppointmentStep"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/AppointmentTimeSlot/GetTimeSlots",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/AppointmentTimeSlot/GetTimeSlots?BranchId=-41513070&Date=2002-10-13T21:31:42.876Z&AccountId=-41513070&ServiceId=-41513070&ResourceId=-41513070&Duration=-41513070&CompanyId=23934902",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"AppointmentTimeSlot",
+								"GetTimeSlots"
+							],
+							"query": [
+								{
+									"key": "BranchId",
+									"value": "-41513070",
+									"description": "(Required) "
+								},
+								{
+									"key": "Date",
+									"value": "2002-10-13T21:31:42.876Z",
+									"description": "(Required) "
+								},
+								{
+									"key": "AccountId",
+									"value": "-41513070",
+									"description": "(Required) "
+								},
+								{
+									"key": "ServiceId",
+									"value": "-41513070",
+									"description": "(Required) "
+								},
+								{
+									"key": "ResourceId",
+									"value": "-41513070"
+								},
+								{
+									"key": "Duration",
+									"value": "-41513070"
+								},
+								{
+									"key": "CompanyId",
+									"value": "23934902"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/AppointmentTimeSlot/GetTimeSlots?BranchId=-41513070&Date=2002-10-13T21:31:42.876Z&AccountId=-41513070&ServiceId=-41513070&ResourceId=-41513070&Duration=-41513070&CompanyId=23934902",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"AppointmentTimeSlot",
+										"GetTimeSlots"
+									],
+									"query": [
+										{
+											"key": "BranchId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Date",
+											"value": "2002-10-13T21:31:42.876Z"
+										},
+										{
+											"key": "AccountId",
+											"value": "-41513070"
+										},
+										{
+											"key": "ServiceId",
+											"value": "-41513070"
+										},
+										{
+											"key": "ResourceId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Duration",
+											"value": "-41513070"
+										},
+										{
+											"key": "CompanyId",
+											"value": "23934902"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"value\": \"nostrud ex\",\n    \"label\": \"ex ullamco\"\n  },\n  {\n    \"value\": \"ex consequat\",\n    \"label\": \"voluptate amet culpa\"\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/AppointmentTimeSlot/GetTimeSlots?BranchId=-41513070&Date=2002-10-13T21:31:42.876Z&AccountId=-41513070&ServiceId=-41513070&ResourceId=-41513070&Duration=-41513070&CompanyId=23934902",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"AppointmentTimeSlot",
+										"GetTimeSlots"
+									],
+									"query": [
+										{
+											"key": "BranchId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Date",
+											"value": "2002-10-13T21:31:42.876Z"
+										},
+										{
+											"key": "AccountId",
+											"value": "-41513070"
+										},
+										{
+											"key": "ServiceId",
+											"value": "-41513070"
+										},
+										{
+											"key": "ResourceId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Duration",
+											"value": "-41513070"
+										},
+										{
+											"key": "CompanyId",
+											"value": "23934902"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/AppointmentTimeSlot/GetTimeSlots?BranchId=-41513070&Date=2002-10-13T21:31:42.876Z&AccountId=-41513070&ServiceId=-41513070&ResourceId=-41513070&Duration=-41513070&CompanyId=23934902",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"AppointmentTimeSlot",
+										"GetTimeSlots"
+									],
+									"query": [
+										{
+											"key": "BranchId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Date",
+											"value": "2002-10-13T21:31:42.876Z"
+										},
+										{
+											"key": "AccountId",
+											"value": "-41513070"
+										},
+										{
+											"key": "ServiceId",
+											"value": "-41513070"
+										},
+										{
+											"key": "ResourceId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Duration",
+											"value": "-41513070"
+										},
+										{
+											"key": "CompanyId",
+											"value": "23934902"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Branch/GetRequestedBranches",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Branch/GetRequestedBranches?CompanyId=12097&CityId=2&CountryId=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Branch",
+								"GetRequestedBranches"
+							],
+							"query": [
+								{
+									"key": "CompanyId",
+									"value": "12097",
+									"description": "(Required) "
+								},
+								{
+									"key": "CityId",
+									"value": "2",
+									"description": "(Required) "
+								},
+								{
+									"key": "CountryId",
+									"value": "2",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Branch/GetRequestedBranches?CompanyId=-41513070&CityId=-41513070&CountryId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Branch",
+										"GetRequestedBranches"
+									],
+									"query": [
+										{
+											"key": "CompanyId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CityId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": -85811265,\n    \"name\": \"dolore consequat non\",\n    \"address\": \"Duis pariatur id commodo\",\n    \"email\": \"aute eiusmod cillum officia dolore\",\n    \"webSite\": \"ut nulla ex Duis nostrud\",\n    \"isTemporaryDisabled\": false,\n    \"phones\": [\n      \"cupidatat quis velit culpa Lorem\",\n      \"amet dolore sit laborum\"\n    ],\n    \"externalBranchId\": 11368859,\n    \"latitude\": 70824443.20939839,\n    \"longitude\": 43265280.889709204,\n    \"isCheckInEnabled\": true,\n    \"activeTicketsCount\": 33963026,\n    \"isWorking\": false,\n    \"isWeekEndWorking\": true,\n    \"is24Open\": true\n  },\n  {\n    \"id\": -17407552,\n    \"name\": \"in dolor deserunt qui anim\",\n    \"address\": \"sint deserunt cupidatat\",\n    \"email\": \"dolore dolor irure veniam dolore\",\n    \"webSite\": \"dolor consequat\",\n    \"isTemporaryDisabled\": false,\n    \"phones\": [\n      \"laborum\",\n      \"cupidatat proident ut\"\n    ],\n    \"externalBranchId\": -57876751,\n    \"latitude\": 59957821.73528847,\n    \"longitude\": 34705003.69448882,\n    \"isCheckInEnabled\": false,\n    \"activeTicketsCount\": -71343860,\n    \"isWorking\": false,\n    \"isWeekEndWorking\": false,\n    \"is24Open\": true\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Branch/GetRequestedBranches?CompanyId=-41513070&CityId=-41513070&CountryId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Branch",
+										"GetRequestedBranches"
+									],
+									"query": [
+										{
+											"key": "CompanyId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CityId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Branch/GetRequestedBranches?CompanyId=-41513070&CityId=-41513070&CountryId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Branch",
+										"GetRequestedBranches"
+									],
+									"query": [
+										{
+											"key": "CompanyId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CityId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Button",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Button?BranchId=6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Button"
+							],
+							"query": [
+								{
+									"key": "BranchId",
+									"value": "6",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Button?BranchId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Button"
+									],
+									"query": [
+										{
+											"key": "BranchId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"terminalId\": -12156771,\n    \"cultures\": \"eiusmod dolor\",\n    \"buttons\": [\n      {\n        \"buttonColId\": 5400474,\n        \"buttonText\": \"Duis adipisicing ut commodo\",\n        \"actionParams\": {\n          \"action\": -41079001,\n          \"nextPage\": 51295372\n        },\n        \"colOrder\": 5619174,\n        \"rowOrder\": 23143205,\n        \"pageId\": -94883459,\n        \"isMainPage\": true\n      },\n      {\n        \"buttonColId\": -35084116,\n        \"buttonText\": \"magna enim velit culpa\",\n        \"actionParams\": {\n          \"action\": -73525907,\n          \"nextPage\": -6849930\n        },\n        \"colOrder\": -92642673,\n        \"rowOrder\": 84521636,\n        \"pageId\": -28655950,\n        \"isMainPage\": true\n      }\n    ]\n  },\n  {\n    \"terminalId\": -11255933,\n    \"cultures\": \"voluptate sint dolore minim Lorem\",\n    \"buttons\": [\n      {\n        \"buttonColId\": 20741349,\n        \"buttonText\": \"laborum ipsum minim\",\n        \"actionParams\": {\n          \"action\": 30132106,\n          \"nextPage\": -46914897\n        },\n        \"colOrder\": 41380222,\n        \"rowOrder\": 88840853,\n        \"pageId\": -56015394,\n        \"isMainPage\": true\n      },\n      {\n        \"buttonColId\": -9512889,\n        \"buttonText\": \"elit in pariatur voluptate\",\n        \"actionParams\": {\n          \"action\": 17838439,\n          \"nextPage\": -89939053\n        },\n        \"colOrder\": 50604232,\n        \"rowOrder\": 96761927,\n        \"pageId\": 94658928,\n        \"isMainPage\": false\n      }\n    ]\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Button?BranchId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Button"
+									],
+									"query": [
+										{
+											"key": "BranchId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Button?BranchId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Button"
+									],
+									"query": [
+										{
+											"key": "BranchId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/City",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/City?CountryId=2&Culture=hy",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"City"
+							],
+							"query": [
+								{
+									"key": "CountryId",
+									"value": "2"
+								},
+								{
+									"key": "Culture",
+									"value": "hy"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/City?CountryId=-41513070&Culture=ut commodo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"City"
+									],
+									"query": [
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Culture",
+											"value": "ut commodo"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": -58601921,\n    \"name\": \"officia labore Ut\",\n    \"order\": 52195432\n  },\n  {\n    \"id\": 2075965,\n    \"name\": \"tempor ullamco\",\n    \"order\": -22274674\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/City?CountryId=-41513070&Culture=ut commodo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"City"
+									],
+									"query": [
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Culture",
+											"value": "ut commodo"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/City?CountryId=-41513070&Culture=ut commodo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"City"
+									],
+									"query": [
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										},
+										{
+											"key": "Culture",
+											"value": "ut commodo"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Company/GetRequestedCompanies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0MTJ0ZXN0MDBhcnNlbjI4OkFGQTlBQUQxNzI4QjRCNTc5RjM1RkU0RjE0NzI0OTBDIiwianRpIjoiNDIwMjg2MmUtYmQ2Mi00Y2U5LWI1MzctMDQxNTU4MTY3ZTc0IiwibmJmIjoxNjQ4NTMwNTI1LCJleHAiOjE2NDg1NDEzMjUsImlhdCI6MTY0ODUzMDUyNX0.u1O7lCZ_mHKoHZT9-vpWW7hNQaU6hwCKqVZnd_aBDzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Company/GetRequestedCompanies?IndustryId=6&LanguageCode=hy&CityId=2&CountryId=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Company",
+								"GetRequestedCompanies"
+							],
+							"query": [
+								{
+									"key": "IndustryId",
+									"value": "6",
+									"description": "(Required) "
+								},
+								{
+									"key": "LanguageCode",
+									"value": "hy",
+									"description": "(Required) "
+								},
+								{
+									"key": "CityId",
+									"value": "2",
+									"description": "(Required) "
+								},
+								{
+									"key": "CountryId",
+									"value": "2",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Company/GetRequestedCompanies?IndustryId=-41513070&LanguageCode=ut commodo&CityId=-41513070&CountryId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Company",
+										"GetRequestedCompanies"
+									],
+									"query": [
+										{
+											"key": "IndustryId",
+											"value": "-41513070"
+										},
+										{
+											"key": "LanguageCode",
+											"value": "ut commodo"
+										},
+										{
+											"key": "CityId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": -60047352,\n    \"name\": \"consequat in mollit\",\n    \"address\": \"consectetur sit\",\n    \"email\": \"incididunt\",\n    \"webSite\": \"nulla sit incididunt\",\n    \"isTemporaryDisabled\": false,\n    \"phones\": [\n      \"reprehenderit cupida\",\n      \"irure dolore nisi Ut\"\n    ],\n    \"type\": -16155940,\n    \"categoryNames\": [\n      \"irure sint Duis Lorem\",\n      \"nulla ut amet\"\n    ],\n    \"imagePath\": \"Duis aliqua\",\n    \"isForceEnabled\": false,\n    \"checkinKey\": \"quis tempor proident et si\",\n    \"branchIds\": [\n      -21034271,\n      41380381\n    ]\n  },\n  {\n    \"id\": 3933535,\n    \"name\": \"Lorem Duis\",\n    \"address\": \"in laborum sit\",\n    \"email\": \"commodo reprehenderit\",\n    \"webSite\": \"in mollit cillum\",\n    \"isTemporaryDisabled\": true,\n    \"phones\": [\n      \"non eiusmod occaecat\",\n      \"cillum Ut amet proident\"\n    ],\n    \"type\": 99824128,\n    \"categoryNames\": [\n      \"incididunt irure\",\n      \"ipsum esse anim adipisicing\"\n    ],\n    \"imagePath\": \"ut\",\n    \"isForceEnabled\": false,\n    \"checkinKey\": \"ut anim\",\n    \"branchIds\": [\n      54637865,\n      29692717\n    ]\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Company/GetRequestedCompanies?IndustryId=-41513070&LanguageCode=ut commodo&CityId=-41513070&CountryId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Company",
+										"GetRequestedCompanies"
+									],
+									"query": [
+										{
+											"key": "IndustryId",
+											"value": "-41513070"
+										},
+										{
+											"key": "LanguageCode",
+											"value": "ut commodo"
+										},
+										{
+											"key": "CityId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Company/GetRequestedCompanies?IndustryId=-41513070&LanguageCode=ut commodo&CityId=-41513070&CountryId=-41513070",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Company",
+										"GetRequestedCompanies"
+									],
+									"query": [
+										{
+											"key": "IndustryId",
+											"value": "-41513070"
+										},
+										{
+											"key": "LanguageCode",
+											"value": "ut commodo"
+										},
+										{
+											"key": "CityId",
+											"value": "-41513070"
+										},
+										{
+											"key": "CountryId",
+											"value": "-41513070"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Culture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0MTJ0ZXN0MDBhcnNlbjI4OkFGQTlBQUQxNzI4QjRCNTc5RjM1RkU0RjE0NzI0OTBDIiwianRpIjoiNDIwMjg2MmUtYmQ2Mi00Y2U5LWI1MzctMDQxNTU4MTY3ZTc0IiwibmJmIjoxNjQ4NTMwNTI1LCJleHAiOjE2NDg1NDEzMjUsImlhdCI6MTY0ODUzMDUyNX0.u1O7lCZ_mHKoHZT9-vpWW7hNQaU6hwCKqVZnd_aBDzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Culture",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Culture"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Culture",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Culture"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": -92124979,\n    \"code\": \"ut Lorem adipisicing\",\n    \"name\": \"do ad\",\n    \"nativeName\": \"commodo nulla Ut eu\"\n  },\n  {\n    \"id\": -18709648,\n    \"code\": \"est eu sed\",\n    \"name\": \"laborum\",\n    \"nativeName\": \"consectetur enim eu aute\"\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Culture",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Culture"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Culture",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Culture"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/GeneralData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/GeneralData?CompanyId=12097",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"GeneralData"
+							],
+							"query": [
+								{
+									"key": "CompanyId",
+									"value": "12097"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/GeneralData?CompanyId=23934902",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"GeneralData"
+									],
+									"query": [
+										{
+											"key": "CompanyId",
+											"value": "23934902"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"services\": [\n    {\n      \"id\": -7778949,\n      \"name\": \"ipsum labore exercitation reprehenderit anim\",\n      \"description\": \"aute eiusmod\",\n      \"duration\": -96241144,\n      \"color\": \"dolore incididunt\",\n      \"isReception\": true,\n      \"count\": 25306020,\n      \"specializationName\": \"deserunt et\"\n    },\n    {\n      \"id\": 58489109,\n      \"name\": \"ut laborum Duis\",\n      \"description\": \"ut\",\n      \"duration\": 81514945,\n      \"color\": \"elit\",\n      \"isReception\": false,\n      \"count\": 72686948,\n      \"specializationName\": \"enim dolor\"\n    }\n  ],\n  \"specializations\": [\n    {\n      \"id\": -49004310,\n      \"name\": \"incididunt ut Duis\",\n      \"description\": \"Duis est\",\n      \"color\": \"id ut laboris enim\",\n      \"count\": -40486855,\n      \"serviceIds\": [\n        -61563420,\n        -67127216\n      ]\n    },\n    {\n      \"id\": -37161301,\n      \"name\": \"amet\",\n      \"description\": \"aliquip tempor\",\n      \"color\": \"minim id sint\",\n      \"count\": 30168225,\n      \"serviceIds\": [\n        -92231270,\n        94004180\n      ]\n    }\n  ],\n  \"accounts\": [\n    {\n      \"id\": -33051253,\n      \"userId\": \"proident\",\n      \"companyId\": 70715654,\n      \"name\": \"in culpa\",\n      \"title\": \"laborum\",\n      \"email\": \"sed nostrud irure Duis\",\n      \"photoUrl\": \"amet incididunt\",\n      \"branchIds\": [\n        24367118,\n        64622216\n      ],\n      \"specializationIds\": [\n        22678315,\n        87404256\n      ]\n    },\n    {\n      \"id\": -88896976,\n      \"userId\": \"id do\",\n      \"companyId\": -48832422,\n      \"name\": \"incididunt eiusmod Ut amet\",\n      \"title\": \"Lorem quis elit culpa\",\n      \"email\": \"tempor ad est dolor\",\n      \"photoUrl\": \"nisi enim cupidatat est pariatur\",\n      \"branchIds\": [\n        43773121,\n        -9215617\n      ],\n      \"specializationIds\": [\n        -41336767,\n        -75333411\n      ]\n    }\n  ]\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/GeneralData?CompanyId=23934902",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"GeneralData"
+									],
+									"query": [
+										{
+											"key": "CompanyId",
+											"value": "23934902"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/GeneralData?CompanyId=23934902",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"GeneralData"
+									],
+									"query": [
+										{
+											"key": "CompanyId",
+											"value": "23934902"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Industry",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Industry",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Industry"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Industry",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Industry"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 1310199,\n    \"name\": \"exercitation\",\n    \"imagePath\": \"esse\"\n  },\n  {\n    \"id\": -20121797,\n    \"name\": \"amet elit\",\n    \"imagePath\": \"Lorem ut dolor enim\"\n  }\n]"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Industry",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Industry"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"voluptate in\",\n  \"title\": \"est fugiat Duis\",\n  \"status\": -38847292,\n  \"detail\": \"laboris ipsum eu ad irure\",\n  \"instance\": \"magna ipsum consectetur Excepteur sint\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Industry",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Industry"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0MTJ0ZXN0MDBhcnNlbjI4OkFGQTlBQUQxNzI4QjRCNTc5RjM1RkU0RjE0NzI0OTBDIiwianRpIjoiMTA0MjlhNDUtYjdjYS00ODlkLTg0ZmEtZDk0NTk0ODk4NzRlIiwibmJmIjoxNjQ5NjU3MjM2LCJleHAiOjE2NDk2NjgwMzYsImlhdCI6MTY0OTY1NzIzNn0.2F8h-bxmx3ePTI6Z8A2UqByiUg4QDuebWLdja1d_n1E",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api-testing.earlyone.com",
+			"type": "string"
+		}
+	]
+}
